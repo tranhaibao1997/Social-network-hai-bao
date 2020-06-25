@@ -20,6 +20,13 @@ const ProfileSchema = mongoose.Schema({
     summary: {
         type: String
     },
+    friend: Array,
+    sendFriendRequest: Array,
+    recieveFriendRequest: Array,
+    sexiness: {
+        type: Number,
+        default: 0
+    },
     social: {
         youtube: {
             type: String
@@ -40,8 +47,8 @@ const ProfileSchema = mongoose.Schema({
 
 
 
+
 })
 
 let Profile = mongoose.model("profile", ProfileSchema)
 module.exports = Profile
-
