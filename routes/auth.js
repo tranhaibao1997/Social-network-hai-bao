@@ -3,7 +3,7 @@ var router = express.Router();
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
-const auth = require('../middlewares/auth')
+const { auth } = require('../middlewares/auth')
 
 
 

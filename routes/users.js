@@ -15,7 +15,7 @@ router.post("/register", [
         if (!errors.isEmpty()) {
             return res.status(400).send({ errors: errors.array() })
         }
-        const { name, email, password } = req.body
+        const { name, email, password, type } = req.body
 
         try {
             let user = await User.findOne({ email })
@@ -29,6 +29,7 @@ router.post("/register", [
                 name: name,
                 email: email,
                 password: password,
+                type: type || "normal"
 
             })
             await newUser.save()

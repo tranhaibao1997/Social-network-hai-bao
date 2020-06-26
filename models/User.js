@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "User must have a password"]
     },
+    type: {
+        type: "String",
+        enum: ["host", "normal"]
+    },
     tokens: [{
             type: String
         }] // array of tokens
